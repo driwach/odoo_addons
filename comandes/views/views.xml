@@ -1,0 +1,89 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+
+    <record model="ir.ui.view" id="adress_inherit">
+      <field name="name">adress.inherit</field>
+      <field name="model">comandes.comandes</field>
+      <field name="inherit_id" ref="adress.adress"/>
+      <field name="arch" type="xml">
+        <tree>
+        <field name="province" position="before" >
+          <field name="id"/>
+          <field name="enviatper"/>
+          <field name="datacomanda"/>
+          <field name="dataenviament"/>
+            <field name="pes"/>
+            <field name="nom_enviament"/>
+            <field name="regio"/>
+            <field name="id_client"/>
+            <field name="id_empleat"/>
+            </field>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="adress_inherit">
+       <field name="name">adress.inherit</field>
+      <field name="model">comandes.comandes</field>
+      <field name="inherit_id" ref="adress.adress"/>
+      <field name="arch" type="xml">
+        <form>
+          <group colspan="2" col="2">
+                <field name="id"/>
+          <field name="enviatper"/>
+          <field name="datacomanda"/>
+          <field name="dataenviament"/>
+            <field name="pes"/>
+            <field name="nom_enviament"/>
+            <field name="regio"/>
+            
+          </group>
+        </form>
+      </field>
+    </record>
+
+
+    <!-- actions opening views on models -->
+<!--
+    <record model="ir.actions.act_window" id="comandes.action_window">
+      <field name="name">comandes window</field>
+      <field name="res_model">comandes.comandes</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+-->
+
+    <!-- server action to the one above -->
+<!--
+    <record model="ir.actions.server" id="comandes.action_server">
+      <field name="name">comandes server</field>
+      <field name="model_id" ref="model_comandes_comandes"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+-->
+
+    <!-- Top menu item -->
+<!--
+    <menuitem name="comandes" id="comandes.menu_root"/>
+-->
+    <!-- menu categories -->
+<!--
+    <menuitem name="Menu 1" id="comandes.menu_1" parent="comandes.menu_root"/>
+    <menuitem name="Menu 2" id="comandes.menu_2" parent="comandes.menu_root"/>
+-->
+    <!-- actions -->
+<!--
+    <menuitem name="List" id="comandes.menu_1_list" parent="comandes.menu_1"
+              action="comandes.action_window"/>
+    <menuitem name="Server to list" id="comandes" parent="comandes.menu_2"
+              action="comandes.action_server"/>
+-->
+  </data>
+</odoo>

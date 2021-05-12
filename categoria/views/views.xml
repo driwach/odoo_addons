@@ -1,0 +1,74 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+   <record model="ir.ui.view" id="categoria.list_tree">
+      <field name="name">categoria</field>
+      <field name="model">categoria.categoria</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="NomCategoria"/>
+          <field name="Descripció"/>
+          <field name="Imatge"/>
+
+        </tree>
+      </field>
+    </record>
+
+<record model="ir.ui.view" id="categoria.list_form">
+      <field name="name">categoria form</field>
+      <field name="model">categoria.categoria</field>
+      <field name="arch" type="xml">
+        <form>
+        <group colspan="2" col="2"> 
+           <field name="NomCategoria"/>
+          <field name="Descripció"/>
+          <field name="Imatge"/>
+
+          </group>
+        </form>
+      </field>
+    </record>
+
+    <!-- actions opening views on models -->
+<!--
+    <record model="ir.actions.act_window" id="categoria.action_window">
+      <field name="name">categoria window</field>
+      <field name="res_model">categoria.categoria</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+-->
+
+    <!-- server action to the one above -->
+<!--
+    <record model="ir.actions.server" id="categoria.action_server">
+      <field name="name">categoria server</field>
+      <field name="model_id" ref="model_categoria_categoria"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+-->
+
+    <!-- Top menu item -->
+<!--
+    <menuitem name="categoria" id="categoria.menu_root"/>
+-->
+    <!-- menu categories -->
+<!--
+    <menuitem name="Menu 1" id="categoria.menu_1" parent="categoria.menu_root"/>
+    <menuitem name="Menu 2" id="categoria.menu_2" parent="categoria.menu_root"/>
+-->
+    <!-- actions -->
+<!--
+    <menuitem name="List" id="categoria.menu_1_list" parent="categoria.menu_1"
+              action="categoria.action_window"/>
+    <menuitem name="Server to list" id="categoria" parent="categoria.menu_2"
+              action="categoria.action_server"/>
+-->
+  </data>
+</odoo>

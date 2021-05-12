@@ -1,0 +1,100 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+
+    <record model="ir.ui.view" id="proveidors.list_tree">
+      <field name="name">Proveidors</field>
+      <field name="model">proveidors.proveidors</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="contact"/>
+          <field name="title"/>
+          <field name="state"/>
+          <field name="city"/>
+          <field name="adress"/>
+          <field name="codi"/>
+          <field name="pais"/>
+          <field name="telefon"/>
+          <field name="fax"/>
+          <field name="web"/>
+          
+        </tree>
+      </field>
+    </record>
+
+<record model="ir.ui.view" id="proveidors.list_form">
+      <field name="name">Proveidors form</field>
+      <field name="model">proveidors.proveidors</field>
+      <field name="arch" type="xml">
+        <form>
+        <group colspan="2" col="2"> 
+         <field name="name"/>
+          <field name="contact"/>
+          <field name="title"/>
+          <field name="state"/>
+          <field name="city"/>
+          <field name="adress"/>
+          <field name="codi"/>
+          <field name="pais"/>
+          <field name="telefon"/>
+          <field name="fax"/>
+          <field name="web"/>
+          </group>
+        </form>
+      </field>
+    </record>
+
+ <record model="ir.actions.act_window" id="proveidors.action_window">
+      <field name="name">proveidors window</field>
+      <field name="res_model">proveidors.proveidors</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+        <menuitem name="proveidors" id="proveidors.menu_root"  action="proveidors.action_window" />
+       <menuitem name="Menu" id="proveidors.menu_1" parent="proveidors.menu_root"  action="proveidors.action_window" />
+
+    <!-- actions opening views on models -->
+<!--
+    <record model="ir.actions.act_window" id="clients.action_window">
+      <field name="name">clients window</field>
+      <field name="res_model">clients.clients</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+-->
+
+    <!-- server action to the one above -->
+<!--
+    <record model="ir.actions.server" id="clients.action_server">
+      <field name="name">clients server</field>
+      <field name="model_id" ref="model_clients_clients"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+-->
+
+    <!-- Top menu item -->
+<!--
+    <menuitem name="clients" id="clients.menu_root"/>
+-->
+    <!-- menu categories -->
+<!--
+    <menuitem name="Menu 1" id="clients.menu_1" parent="clients.menu_root"/>
+    <menuitem name="Menu 2" id="clients.menu_2" parent="clients.menu_root"/>
+-->
+    <!-- actions -->
+<!--
+    <menuitem name="List" id="clients.menu_1_list" parent="clients.menu_1"
+              action="clients.action_window"/>
+    <menuitem name="Server to list" id="clients" parent="clients.menu_2"
+              action="clients.action_server"/>
+              <menuitem name="clients" id="clients.ico" web_icon="clients,../static/src/img/icon.png" sequence="1"/>
+
+-->
+  </data>
+</odoo>

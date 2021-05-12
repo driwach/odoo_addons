@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_detall_comanda_detall_comanda,detall_comanda.detall_comanda,model_detall_comanda_detall_comanda,base.group_user,1,1,1,1

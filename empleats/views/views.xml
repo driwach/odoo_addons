@@ -1,0 +1,114 @@
+<odoo>
+  <data>
+
+    <record model="ir.ui.view" id="empleats.list_tree">
+      <field name="name">Empleats</field>
+      <field name="model">empleats.empleats</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="id"/>
+          <field name="name"/>
+          <field name="lastname"/>
+          <field name="fotografia"/>
+          <field name="date"/>
+            <field name="province"/>
+            <field name="ciutat"/>
+            <field name="Adress"/>
+            <field name="cp"/>
+            <field name="country"/>
+            <field name="phone"/>
+            <field name="fax"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="empleats.list_form">
+      <field name="name">empleats form</field>
+      <field name="model">empleats.empleats</field>
+      <field name="arch" type="xml">
+        <form>
+          <group colspan="2" col="2">
+            <field name="id"/>
+            <field name="name"/>
+            <field name="lastname"/>
+            <field name="fotografia"/>
+            <field name="date"/>
+            <field name="province"/>
+            <field name="ciutat"/>
+            <field name="Adress"/>
+            <field name="cp"/>
+            <field name="country"/>
+            <field name="phone"/>
+            <field name="fax"/>
+          </group>
+        </form>
+      </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="empleats.action_window">
+      <field name="name">empleats window</field>
+      <field name="res_model">empleats.empleats</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+    <menuitem name="empleats" id="empleats.menu_root" action="empleats.action_window" />
+    <menuitem name="Menu 1" id="empleats.menu_1" parent="empleats.menu_root" action="empleats.action_window" />
+  </data>
+</odoo>
+
+
+
+
+    <!-- explicit list view definition -->
+    <!--
+    <record model="ir.ui.view" id="empleats.list">
+      <field name="name">empleats list</field>
+      <field name="model">empleats.empleats</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="value"/>
+          <field name="value2"/>
+        </tree>
+      </field>
+    </record>
+-->
+
+    <!-- actions opening views on models -->
+    <!--
+    <record model="ir.actions.act_window" id="empleats.action_window">
+      <field name="name">empleats window</field>
+      <field name="res_model">empleats.empleats</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+-->
+
+    <!-- server action to the one above -->
+    <!--
+    <record model="ir.actions.server" id="empleats.action_server">
+      <field name="name">empleats server</field>
+      <field name="model_id" ref="model_empleats_empleats"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+-->
+
+    <!-- Top menu item -->
+    <!--
+    <menuitem name="empleats" id="empleats.menu_root"/>
+-->
+    <!-- menu categories -->
+    <!--
+    <menuitem name="Menu 1" id="empleats.menu_1" parent="empleats.menu_root"/>
+    <menuitem name="Menu 2" id="empleats.menu_2" parent="empleats.menu_root"/>
+-->
+    <!-- actions -->
+    <!--
+    <menuitem name="List" id="empleats.menu_1_list" parent="empleats.menu_1" action="empleats.action_window"/>
+    <menuitem name="Server to list" id="empleats" parent="empleats.menu_2" action="empleats.action_server"/>
+-->
